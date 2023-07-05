@@ -59,28 +59,39 @@ class Game {
         }        
     }
     checkBoard(input){
+        let hit = false
         for(let i = 0; i < this.word.length; i++){
             if(input === this.word[i]){
                 this.board[i] = input;
                 this.score++
-            } else {
-                this.missed++
+                hit = true
             }
         }
+        if (hit === false){
+            this.missed += 1;
+        }
+        console.log(this.missed);
         this.checkWin()
+        this.checkLose()
+        
     }
     checkWin(){
         let word = this.word.join("");
         let board = this.board.join("")
+
         if(word === board){
             console.log('gewonnen')
+        }
+    }
+    checkLose(){
+        if(this.missed === 11){
+            console.log('verloren');
         }
     }
 }
 const getInput = (game) => {
     let input = document.getElementById('eingabe');
     const button = document.getElementById('btn_check')
-
     button.addEventListener('click', () => {
         game.checkInput(input.value.toUpperCase());
     })
@@ -90,8 +101,8 @@ const init = () => {
     const game = new Game(player);
     game.chooseWord(words);
     game.createBoard();
-    console.log(game.word);
     getInput(game);
+    
 }
 
 let words = [
