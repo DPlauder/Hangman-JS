@@ -61,7 +61,8 @@ class Game {
     checkBoard(input){
         for(let i = 0; i < this.word.length; i++){
             if(input === this.word[i]){
-                this.board[i] = input; 
+                this.board[i] = input;
+                this.score++
             } else {
                 this.missed++
             }
@@ -69,10 +70,10 @@ class Game {
         this.checkWin()
     }
     checkWin(){
-        console.log('word', this.word); //join
-        console.log('board', this.board);
-        if(this.word == this.board){
-            console.log('gewonne')
+        let word = this.word.join("");
+        let board = this.board.join("")
+        if(word === board){
+            console.log('gewonnen')
         }
     }
 }
