@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+    height: 100px;
+    background-color: rgb(70, 69, 69);
+    color: white;
+    text-align: center;
+}
+
+.spielfeld {
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 2fr;
+    justify-items: center;
+    align-items: center;
+}
+.btns_letters {
+    height: 70%;
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.btn_letter {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    display: grid;
+    place-content: center;
+}
+.blanks_container {
+    height: 80%;
+    width: 90%;
+    grid-column: 1 / span 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.blanks{
+    font-size: 500%;
+    margin: 10px;
+}

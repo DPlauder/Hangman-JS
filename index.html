@@ -3,19 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text.css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Hangman</title>
 </head>
 <body>
     <header>
-
+        <h1>HANGMAN</h1>
     </header>
     <section class="spielfeld" id="spielfeld">
-        <input type="text" id="eingabe" maxlength="1">
+<!--        <input type="text" id="eingabe" maxlength="1">
         <button id="btn_check">Send</button>
+-->
+        <div class="hanging"></div>
+        <div class="btns_letters" id="btns_letters"></div>
+        <div class="blanks_container" id="blanks_container"></div>
     </section>
-
 
     <script src="main.js" defer></script>
 </body>
 </html>
+
+     <!--   _____________
+        |           |
+        |         \ O /
+        |          \|/
+        |           |
+        |          / \
+        |         /   \       
+        |
+        |
+     ___|___
+     --> 
+
